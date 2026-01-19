@@ -1,0 +1,114 @@
+.featured-work {
+    background: var(--color-dark-gray);
+}
+
+.work-showcase {
+    padding: var(--spacing-lg);
+    transition: transform var(--transition-normal);
+}
+
+.work-showcase:hover {
+    transform: translateY(-5px);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.video-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.video-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center,
+            rgba(211, 47, 47, 0.2) 0%,
+            transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.play-button {
+    position: relative;
+    z-index: 2;
+    transition: transform var(--transition-normal);
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.play-button svg {
+    filter: drop-shadow(0 0 20px rgba(211, 47, 47, 0.5));
+}
+
+.work-metadata {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.metadata-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.metadata-label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-candy-red);
+    font-weight: 600;
+}
+
+.metadata-value {
+    font-size: 1.125rem;
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .work-showcase {
+        padding: var(--spacing-md);
+    }
+
+    .work-metadata {
+        grid-template-columns: 1fr;
+    }
+}
