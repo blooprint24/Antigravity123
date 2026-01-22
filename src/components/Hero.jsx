@@ -1,51 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Hero.css';
 
 const Hero = () => {
-    const [text, setText] = useState('');
-    const fullText = 'CINEMATIC AI PRODUCTIONS';
-
-    useEffect(() => {
-        let index = 0;
-        const timer = setInterval(() => {
-            if (index <= fullText.length) {
-                setText(fullText.slice(0, index));
-                index++;
-            } else {
-                clearInterval(timer);
-            }
-        }, 100);
-
-        return () => clearInterval(timer);
-    }, []);
-
     return (
-        <section className="hero" id="hero">
-            <div className="hero-background">
-                <div className="gradient-overlay"></div>
-                <div className="animated-gradient"></div>
-            </div>
-
-            <div className="hero-content">
-                <div className="hero-text">
-                    <h1 className="hero-title">
-                        {text}
-                        <span className="cursor">|</span>
-                    </h1>
-                    <p className="hero-subtitle">
-                        Where creativity meets artificial intelligence
-                    </p>
-                    <div className="hero-cta">
-                        <a href="#work" className="btn btn-primary">View Our Work</a>
-                        <a href="#contact" className="btn btn-outline">Get Started</a>
-                    </div>
+        <section className="hero">
+            <div className="hero-overlay"></div>
+            <div className="container hero-content">
+                <div className="hero-badge">
+                    <span className="star">★ ★ ★ ★ ★</span>
+                    <span className="rating-text">5.0 (5 Reviews)</span>
                 </div>
-
-                <div className="scroll-indicator">
-                    <div className="mouse">
-                        <div className="wheel"></div>
-                    </div>
-                    <p>Scroll to explore</p>
+                <h1 className="hero-title">
+                    Transforming Your <br />
+                    <span className="text-accent">Outdoor Vision</span> Into Reality
+                </h1>
+                <p className="hero-description">
+                    Expert landscaping, hardscaping, and tree services in Baton Rouge.
+                    With 5 years of experience, we bring exceptional quality to every project.
+                </p>
+                <div className="hero-actions">
+                    <a href="#contact" className="btn-primary">Bring My Vision To Life</a>
+                    <a href="#services" className="btn-outline">Explore Our Services</a>
                 </div>
             </div>
         </section>
