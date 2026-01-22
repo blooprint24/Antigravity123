@@ -34,7 +34,7 @@ const Services = () => {
             <div className="container">
                 <div className="section-intro">
                     <span className="section-label">Our Expertise</span>
-                    <h2 className="section-title">Premium Outdor Services</h2>
+                    <h2 className="section-title">Premium Outdoor Services</h2>
                     <p className="section-description">
                         We provide exceptional quality services that cater to your specific needs and preferences.
                     </p>

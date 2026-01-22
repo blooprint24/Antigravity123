@@ -34,6 +34,12 @@
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.1em;
+    color: white;
+    /* Changed for visibility on Hero */
+    transition: var(--transition-fast);
+}
+
+.navbar.scrolled .logo-text {
     color: var(--text-primary);
 }
 
@@ -44,8 +50,14 @@
 .logo-subtext {
     font-size: 0.6rem;
     letter-spacing: 0.4em;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.7);
+    /* Changed for visibility on Hero */
     font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+.navbar.scrolled .logo-subtext {
+    color: var(--text-secondary);
 }
 
 .nav-links {
@@ -57,10 +69,16 @@
 .nav-links a {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-primary);
+    color: white;
+    /* Changed for visibility on Hero */
     text-transform: uppercase;
     letter-spacing: 0.1em;
     position: relative;
+    transition: var(--transition-fast);
+}
+
+.navbar.scrolled .nav-links a {
+    color: var(--text-primary);
 }
 
 .nav-links a::after {
