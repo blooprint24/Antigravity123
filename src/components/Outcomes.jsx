@@ -11,10 +11,17 @@ const Outcomes = () => {
         "More revenue without more hiring"
     ];
 
+    const metrics = [
+        { value: "+40%", label: "Lead Capture Rate", color: "text-blue" },
+        { value: "< 2min", label: "Response Time", color: "text-green" },
+        { value: "-25%", label: "Operating Costs", color: "text-blue" },
+        { value: "70%", label: "Effort Reduction", color: "text-green" }
+    ];
+
     return (
         <section className="section" id="outcomes">
             <div className="container">
-                <div className="grid grid-2 items-center">
+                <div className="grid grid-2 items-center gap-xl">
                     <div className="reveal">
                         <h2 className="section-title text-left">What Changes When Friction Is Gone</h2>
                         <p className="section-intro text-left ml-0">Results you can see and feel in your daily operations.</p>
@@ -29,15 +36,13 @@ const Outcomes = () => {
                         </div>
                     </div>
                     <div className="reveal reveal-delay">
-                        <div className="outcome-visual">
-                            <div className="outcome-card">
-                                <span className="outcome-value">+40%</span>
-                                <span className="outcome-label">Lead Capture Rate</span>
-                            </div>
-                            <div className="outcome-card">
-                                <span className="outcome-value">&lt; 2min</span>
-                                <span className="outcome-label">Response Time</span>
-                            </div>
+                        <div className="outcome-grid">
+                            {metrics.map((metric, index) => (
+                                <div key={index} className="outcome-square">
+                                    <span className={`outcome-value ${metric.color}`}>{metric.value}</span>
+                                    <span className="outcome-label">{metric.label}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
