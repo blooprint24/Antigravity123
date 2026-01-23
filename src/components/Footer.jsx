@@ -25,8 +25,8 @@ const Footer = () => {
 
                     <div className="footer-contact">
                         <h4 className="footer-title">Contact</h4>
-                        <p className="footer-link">hello@idealperformance.com</p>
-                        <p className="footer-link">(555) 123-4567</p>
+                        <p className="footer-link">dip@idealperformancegroup.com</p>
+                        <p className="footer-link">225-251-9161</p>
                         <a href="#audit" className="btn btn-secondary mt-sm">Free Audit</a>
                     </div>
                 </div>

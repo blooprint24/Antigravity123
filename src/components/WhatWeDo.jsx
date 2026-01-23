@@ -20,12 +20,19 @@ const WhatWeDo = () => {
                     </div>
                     <div className="reveal reveal-delay">
                         <div className="visual-placeholder bg-navy">
-                            <div className="system-dots">
-                                <div className="dot"></div>
-                                <div className="dot"></div>
-                                <div className="dot"></div>
+                            <div className="dip-visual">
+                                <div className="dip-pulse"></div>
+                                <div className="dip-ring"></div>
+                                <div className="dip-ring"></div>
+                                <div className="dip-ring"></div>
+                                <div className="dip-node-cluster">
+                                    <div className="node"></div>
+                                    <div className="node"></div>
+                                    <div className="node"></div>
+                                    <div className="node"></div>
+                                </div>
                             </div>
-                            <span className="visual-text">DIP System Active</span>
+                            <span className="visual-text mt-md">DIP System Active</span>
                         </div>
                     </div>
                 </div>

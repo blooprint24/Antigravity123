@@ -579,47 +579,118 @@ button {
     overflow: hidden;
 }
 
-.system-dots {
+.dip-visual {
+    position: relative;
+    width: 200px;
+    height: 200px;
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
+.dip-pulse {
+    width: 60px;
+    height: 60px;
     background: var(--primary-blue);
     border-radius: 50%;
-    animation: pulse 1.5s infinite ease-in-out;
+    filter: blur(8px);
+    animation: dip-center-pulse 4s infinite ease-in-out;
 }
 
-.dot:nth-child(2) {
-    animation-delay: 0.2s;
+.dip-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    border-radius: 50%;
+    animation: dip-ring-orbit 8s infinite linear;
 }
 
-.dot:nth-child(3) {
-    animation-delay: 0.4s;
+.dip-ring:nth-child(2) {
+    width: 140%;
+    height: 140%;
+    border-color: rgba(40, 167, 69, 0.15);
+    animation-duration: 12s;
+    animation-direction: reverse;
 }
 
-@keyframes pulse {
+.dip-ring:nth-child(3) {
+    width: 180%;
+    height: 180%;
+    border-color: rgba(255, 255, 255, 0.05);
+    animation-duration: 20s;
+}
+
+.dip-node-cluster {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: dip-ring-orbit 15s infinite linear;
+}
+
+.node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-green);
+}
+
+.node:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node:nth-child(2) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node:nth-child(3) {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.node:nth-child(4) {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes dip-center-pulse {
 
     0%,
     100% {
-        opacity: 0.3;
         transform: scale(1);
+        opacity: 0.6;
     }
 
     50% {
-        opacity: 1;
         transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes dip-ring-orbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
 
 .visual-text {
     font-family: var(--font-heading);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    font-weight: 600;
     opacity: 0.8;
 }
 
