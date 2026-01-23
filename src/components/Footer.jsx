@@ -1,5 +1,7 @@
 import React from 'react';
 
+import logo from '../assets/logo.png';
+
 const Footer = () => {
     return (
         <footer className="footer section pb-xl">
@@ -7,11 +9,7 @@ const Footer = () => {
                 <div className="footer-grid">
                     <div className="footer-brand">
                         <div className="logo">
-                            <div className="logo-main">
-                                <span className="text-blue">IDEAL</span>{' '}
-                                <span className="text-green">PERFORMANCE</span>
-                            </div>
-                            <div className="logo-sub">GROUP</div>
+                            <img src={logo} alt="Ideal Performance Group" className="logo-img" />
                         </div>
                         <p className="mt-sm text-gray-800" style={{ maxWidth: '300px' }}>
                             Modernizing businesses by removing friction and installing intelligent systems.

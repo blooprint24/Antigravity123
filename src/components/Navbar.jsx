@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
+import logo from '../assets/logo.png';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -24,12 +26,7 @@ const Navbar = () => {
             <div className="container nav-container">
                 {/* Logo */}
                 <a href="/" className="logo">
-                    <div className="logo-main">
-                        <span className="text-blue">IDEAL</span>{' '}
-                        <span className="text-green">PERFORMANCE</span>
-                    </div>
-                    <div className="logo-sub">GROUP</div>
-                    <div className="logo-tagline">Make Your Business Smarter</div>
+                    <img src={logo} alt="Ideal Performance Group" className="logo-img" />
                 </a>
 
                 {/* Desktop Nav */}
