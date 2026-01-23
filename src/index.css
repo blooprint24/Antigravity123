@@ -299,6 +299,7 @@ button {
 }
 
 /* Hero Styles */
+/* Hero Styles */
 .hero-section {
     padding: 10rem 0 6rem;
     min-height: 80vh;
@@ -306,13 +307,83 @@ button {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background: radial-gradient(circle at 10% 20%, rgba(0, 123, 255, 0.03) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(40, 167, 69, 0.03) 0%, transparent 40%);
+    background-color: var(--white);
+}
+
+.hero-bg-layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Layer 1: Aurora Animation */
+.hero-aurora {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%,
+            rgba(0, 123, 255, 0.04) 0%,
+            rgba(40, 167, 69, 0.03) 25%,
+            rgba(216, 226, 233, 0.02) 50%,
+            transparent 100%);
+    animation: aurora-shift 35s infinite linear;
+    filter: blur(100px);
+}
+
+@keyframes aurora-shift {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(5%, 5%) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(-5%, 8%) rotate(240deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* Layer 2: Systems Grid */
+.hero-grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.06;
+    background-image:
+        linear-gradient(var(--gray-200) 1px, transparent 1px),
+        linear-gradient(90deg, var(--gray-200) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Layer 3: Main Radial Glow */
+.hero-glow {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circleAtCenter, rgba(0, 123, 255, 0.08) 0%, transparent 70%);
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: 2;
 }
 
 .hero-container {
     position: relative;
-    z-index: 2;
+    z-index: 5;
 }
 
 .hero-content {
@@ -323,6 +394,7 @@ button {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     margin-bottom: var(--spacing-md);
     color: var(--brand-navy);
+    position: relative;
 }
 
 .hero-subtitle {
@@ -339,18 +411,19 @@ button {
     flex-wrap: wrap;
 }
 
-.hero-bg-accent {
-    position: absolute;
-    top: 20%;
-    right: -5%;
-    width: 40%;
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, rgba(0, 123, 255, 0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(60px);
-    z-index: 1;
+/* Reduced Motion Handling */
+@media (prefers-reduced-motion: reduce) {
+    .hero-aurora {
+        animation: none;
+        opacity: 0.5;
+    }
+
+    .hero-glow {
+        transform: none !important;
+    }
 }
 
+/* Mobile Adjustments */
 @media (max-width: 767px) {
     .hero-section {
         padding-top: 8rem;
@@ -359,6 +432,21 @@ button {
 
     .hero-actions {
         justify-content: center;
+    }
+
+    .hero-aurora {
+        animation-duration: 60s;
+        /* Even slower on mobile or consider static */
+        opacity: 0.6;
+    }
+
+    .hero-grid-pattern {
+        background-size: 30px 30px;
+    }
+
+    .hero-glow {
+        display: none;
+        /* Simplify for mobile performance */
     }
 }
 
