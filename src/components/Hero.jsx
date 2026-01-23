@@ -1,28 +1,26 @@
 import React from 'react';
-import './Hero.css';
 
 const Hero = () => {
     return (
-        <section className="hero">
-            <div className="hero-overlay"></div>
-            <div className="container hero-content">
-                <div className="hero-badge">
-                    <span className="star">★ ★ ★ ★ ★</span>
-                    <span className="rating-text">5.0 (5 Reviews)</span>
-                </div>
-                <h1 className="hero-title">
-                    Transforming Your <br />
-                    <span className="text-accent">Outdoor Vision</span> Into Reality
-                </h1>
-                <p className="hero-description">
-                    Expert landscaping, hardscaping, and tree services in Baton Rouge.
-                    With 5 years of experience, we bring exceptional quality to every project.
-                </p>
-                <div className="hero-actions">
-                    <a href="#contact" className="btn-primary">Bring My Vision To Life</a>
-                    <a href="#services" className="btn-outline">Explore Our Services</a>
+        <section className="hero-section">
+            <div className="container hero-container">
+                <div className="hero-content">
+                    <h1 className="hero-title reveal">
+                        Modernize Your Business. <br />
+                        <span className="text-blue">Kill the Friction.</span>
+                    </h1>
+                    <p className="hero-subtitle reveal">
+                        We help businesses make more money with less effort by installing systems that run automatically.
+                    </p>
+                    <div className="hero-actions reveal">
+                        <a href="#audit" className="btn btn-primary">Get a Free Friction Audit</a>
+                        <a href="#how-it-works" className="btn btn-secondary">See How It Works</a>
+                    </div>
                 </div>
             </div>
+
+            {/* Subtle Background Element */}
+            <div className="hero-bg-accent"></div>
         </section>
     );
 };

@@ -1,47 +1,42 @@
 import React from 'react';
-import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer className="footer section pb-xl">
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-brand">
-                        <div className="logo white">
-                            <span className="logo-text">ACE <span className="text-accent">TERRAIN</span></span>
-                            <span className="logo-subtext">LANDSCAPING</span>
+                        <div className="logo">
+                            <div className="logo-main">
+                                <span className="text-blue">IDEAL</span>{' '}
+                                <span className="text-green">PERFORMANCE</span>
+                            </div>
+                            <div className="logo-sub">GROUP</div>
                         </div>
-                        <p>Transforming Baton Rouge outdoor spaces with expert precision and 5 years of dedicated experience.</p>
-                        <div className="footer-contact-info">
-                            <p><strong>Phone:</strong> (225) 278-0029</p>
-                            <p><strong>Areas:</strong> Baton Rouge & Nearby Areas</p>
-                            <p><strong>Hours:</strong> Closes 9 PM</p>
-                        </div>
+                        <p className="mt-sm text-gray-800" style={{ maxWidth: '300px' }}>
+                            Modernizing businesses by removing friction and installing intelligent systems.
+                        </p>
                     </div>
 
-                    <div className="footer-nav">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#reviews">Reviews</a></li>
-                            <li><a href="#contact">Get a Quote</a></li>
-                        </ul>
+                    <div className="footer-links">
+                        <h4 className="footer-title">Quick Links</h4>
+                        <a href="#how-it-works" className="footer-link">How It Works</a>
+                        <a href="#what-we-do" className="footer-link">What We Do</a>
+                        <a href="#outcomes" className="footer-link">Outcomes</a>
                     </div>
 
-                    <div className="footer-services">
-                        <h3>Our Services</h3>
-                        <ul>
-                            <li>Landscaping</li>
-                            <li>Hardscaping</li>
-                            <li>Tree Services</li>
-                            <li>Lawn Care</li>
-                        </ul>
+                    <div className="footer-contact">
+                        <h4 className="footer-title">Contact</h4>
+                        <p className="footer-link">hello@idealperformance.com</p>
+                        <p className="footer-link">(555) 123-4567</p>
+                        <a href="#audit" className="btn btn-secondary mt-sm">Free Audit</a>
                     </div>
                 </div>
 
-                <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Ace Terrain Landscaping. All rights reserved.</p>
+                <div className="footer-bottom mt-xl pt-md border-t">
+                    <p className="text-sm text-gray-500">
+                        &copy; {new Date().getFullYear()} Ideal Performance Group. All rights reserved.
+                    </p>
                 </div>
             </div>
         </footer>

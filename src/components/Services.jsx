@@ -1,55 +1,52 @@
 import React from 'react';
-import './Services.css';
-
-const services = [
-    {
-        title: "Landscaping",
-        description: "Complete landscape renovation and maintenance tailored to your needs.",
-        stats: "Full Renovation",
-        icon: "🌿"
-    },
-    {
-        title: "Hardscaping",
-        description: "Stone pathways, patios, and functional outdoor structures.",
-        stats: "Custom Design",
-        icon: "🧱"
-    },
-    {
-        title: "Tree Services",
-        description: "Professional tree care, trimming, and safe removal services.",
-        stats: "Safe & Licensed",
-        icon: "🌳"
-    },
-    {
-        title: "Lawn Care",
-        description: "Regular maintenance, mowing, and flower garden cleaning.",
-        stats: "Weekly/Bi-weekly",
-        icon: "✂️"
-    }
-];
+import { MousePointerClick, MessageSquare, CalendarClock, ShieldCheck, UserPlus, BarChart3 } from 'lucide-react';
 
 const Services = () => {
-    return (
-        <section id="services" className="services-section">
-            <div className="container">
-                <div className="section-intro">
-                    <span className="section-label">Our Expertise</span>
-                    <h2 className="section-title">Premium Outdoor Services</h2>
-                    <p className="section-description">
-                        We provide exceptional quality services that cater to your specific needs and preferences.
-                    </p>
-                </div>
+    const services = [
+        {
+            icon: <MousePointerClick />,
+            title: "Lead capture & instant response",
+            desc: "Stop losing customers who move to the next competitor when you don't answer."
+        },
+        {
+            icon: <MessageSquare />,
+            title: "Automated follow-up",
+            desc: "Stay top-of-mind without lifting a finger. Consistent communication is key."
+        },
+        {
+            icon: <CalendarClock />,
+            title: "Booking & reminders",
+            desc: "Let your customers schedule themselves and get reminded automatically."
+        },
+        {
+            icon: <ShieldCheck />,
+            title: "Reputation management",
+            desc: "Collect and display reviews to build trust while you sleep."
+        },
+        {
+            icon: <UserPlus />,
+            title: "Customer re-engagement",
+            desc: "Bring past customers back with smart, timely notifications."
+        },
+        {
+            icon: <BarChart3 />,
+            title: "Visible visibility",
+            desc: "Simple dashboards so you always know exactly how your business is performing."
+        }
+    ];
 
-                <div className="services-grid">
+    return (
+        <section className="section bg-gray-100" id="services">
+            <div className="container">
+                <h2 className="section-title reveal">Our Capabilities</h2>
+                <p className="section-intro reveal">Everything you need to modernize your growth, delivered as a complete system.</p>
+
+                <div className="grid grid-3">
                     {services.map((service, index) => (
-                        <div className="service-card" key={index}>
-                            <div className="service-icon-box">{service.icon}</div>
-                            <h3>{service.title}</h3>
-                            <p>{service.description}</p>
-                            <div className="service-footer">
-                                <span className="service-stats">{service.stats}</span>
-                                <a href="#contact" className="service-link">Learn More →</a>
-                            </div>
+                        <div key={index} className="service-card reveal">
+                            <div className="service-icon">{service.icon}</div>
+                            <h3 className="service-title">{service.title}</h3>
+                            <p className="service-desc">{service.desc}</p>
                         </div>
                     ))}
                 </div>

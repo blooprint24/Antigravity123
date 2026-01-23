@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './Navbar.css';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -12,32 +13,56 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
+    const navLinks = [
+        { name: 'How It Works', href: '#how-it-works' },
+        { name: 'What We Do', href: '#what-we-do' },
+        { name: 'Outcomes', href: '#outcomes' },
+    ];
 
     return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-            <div className="container nav-content">
-                <div className="logo" onClick={scrollToTop}>
-                    <span className="logo-text">ACE <span className="text-accent">TERRAIN</span></span>
-                    <span className="logo-subtext">LANDSCAPING</span>
+        <nav className={`nav-main ${scrolled ? 'nav-scrolled' : ''}`}>
+            <div className="container nav-container">
+                {/* Logo */}
+                <a href="/" className="logo">
+                    <div className="logo-main">
+                        <span className="text-blue">IDEAL</span>{' '}
+                        <span className="text-green">PERFORMANCE</span>
+                    </div>
+                    <div className="logo-sub">GROUP</div>
+                    <div className="logo-tagline">Make Your Business Smarter</div>
+                </a>
+
+                {/* Desktop Nav */}
+                <div className="nav-desktop">
+                    {navLinks.map((link) => (
+                        <a key={link.name} href={link.href} className="nav-link">
+                            {link.name}
+                        </a>
+                    ))}
+                    <a href="#audit" className="btn btn-primary">Free Friction Audit</a>
                 </div>
 
-                <ul className="nav-links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                {/* Mobile Toggle */}
+                <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
+                    {isOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
+            </div>
 
-                <div className="nav-cta">
-                    <a href="tel:2252780029" className="btn-call">
-                        <span className="icon">📞</span>
-                        (225) 278-0029
+            {/* Mobile Menu */}
+            <div className={`nav-mobile ${isOpen ? 'nav-mobile-open' : ''}`}>
+                <div className="nav-mobile-content">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            className="nav-mobile-link"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+                    <a href="#audit" className="btn btn-primary" onClick={() => setIsOpen(false)}>
+                        Free Friction Audit
                     </a>
                 </div>
             </div>

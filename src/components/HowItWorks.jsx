@@ -1,54 +1,36 @@
 import React from 'react';
+import { Search, Rocket, TrendingUp } from 'lucide-react';
 
 const HowItWorks = () => {
     const steps = [
         {
-            number: "01",
-            title: "Upload Images",
-            description: "Drag and drop your photos into the workspace. Batch upload is supported!"
+            icon: <Search size={32} />,
+            title: "Identify the friction",
+            desc: "We pinpoint exactly where you're losing time, money, and customers."
         },
         {
-            number: "02",
-            title: "Detect & Highlight",
-            description: "Our AI automatically detects watermarks, or you can brush them manually."
+            icon: <Rocket size={32} />,
+            title: "Install the system",
+            desc: "Our Digital Intelligence Platform takes over the manual work instantly."
         },
         {
-            number: "03",
-            title: "Process & Refine",
-            description: "Click 'Remove' and watch the magic happen. Undo or redo any changes."
-        },
-        {
-            number: "04",
-            title: "Download Results",
-            description: "Export your clean images in high resolution as PNG, JPG, or WebP."
+            icon: <TrendingUp size={32} />,
+            title: "Optimize and scale",
+            desc: "Watch your business grow without adding more people or complexity."
         }
     ];
 
     return (
-        <section className="how-it-works py-3xl" style={{ backgroundColor: 'var(--color-bg-secondary)' }}>
+        <section className="section bg-navy text-white" id="how-it-works">
             <div className="container">
-                <div className="text-center mb-3xl">
-                    <h2 className="text-gradient">How It Works</h2>
-                    <p style={{ color: 'var(--color-text-secondary)' }}>Simple process, professional results</p>
-                </div>
-
-                <div className="grid grid-4 gap-xl">
-                    {steps.map((step, idx) => (
-                        <div key={idx} className="text-center animate-fade-in" style={{ animationDelay: `${idx * 0.15}s` }}>
-                            <div
-                                style={{
-                                    fontSize: '4rem',
-                                    fontWeight: '800',
-                                    color: 'rgba(99, 102, 241, 0.1)',
-                                    lineHeight: '1',
-                                    marginBottom: '-1rem',
-                                    fontFamily: 'system-ui'
-                                }}
-                            >
-                                {step.number}
-                            </div>
-                            <h3 className="mb-md" style={{ position: 'relative', zIndex: 1 }}>{step.title}</h3>
-                            <p style={{ fontSize: 'var(--font-size-sm)' }}>{step.description}</p>
+                <h2 className="section-title text-white reveal">Simple 3-Step Process</h2>
+                <div className="grid grid-3 mt-lg">
+                    {steps.map((step, index) => (
+                        <div key={index} className="step-card reveal">
+                            <div className="step-number">{index + 1}</div>
+                            <div className="step-icon-box">{step.icon}</div>
+                            <h3 className="step-title">{step.title}</h3>
+                            <p className="step-desc">{step.desc}</p>
                         </div>
                     ))}
                 </div>
